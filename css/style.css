@@ -1,0 +1,173 @@
+:root{
+  --bg: #ffffff;
+  --card: #2C3E50;
+  --border: rgba(255,255,255,.15);
+  --text: #ffffff;
+  --primary: #6FA389;
+  --primaryHover: #5b8a74;
+  --accent: #D4C75A;
+  --danger: #ff6a6a;
+  --radius: 16px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  /* 🔥 melhora no mobile */
+  padding: 12px;
+}
+
+.container{
+  width: 100%;
+  max-width: 420px;
+
+  background: var(--card);
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: var(--radius);
+
+  padding: 18px;
+
+  box-shadow: 0 18px 60px rgba(0,0,0,.15);
+
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+input{
+  width: 100%;
+  display: block;
+
+  margin: 10px 0;
+  padding: 14px;
+
+  border-radius: 12px;
+  border: 1px solid var(--border);
+
+  background: rgba(255,255,255,.08);
+  color: var(--text);
+
+  outline: none;
+
+  font-size: 16px; /* evita zoom no iPhone */
+
+  transition: all .2s ease;
+}
+
+input::placeholder{
+  color: rgba(255,255,255,.5);
+}
+
+input:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(111,163,137,.3);
+  transform: scale(1.01);
+}
+
+input.error{
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(255,106,106,.2);
+}
+
+button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all .2s ease;
+}
+
+button:hover{
+  background: var(--primaryHover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+
+p{
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+a{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.logo{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+}
+
+/* ========================= */
+/* 💻 TABLET */
+@media (min-width: 768px){
+
+  body{
+    padding: 20px;
+  }
+
+  .container{
+    padding: 26px;
+  }
+
+  h2{
+    font-size: 1.6rem;
+  }
+}
+
+/* ========================= */
+/* 🖥 DESKTOP */
+@media (min-width: 1024px){
+
+  .container{
+    max-width: 480px;
+    padding: 32px;
+  }
+
+  h2{
+    font-size: 1.8rem;
+  }
+
+  input{
+    padding: 15px;
+  }
+
+  button{
+    padding: 15px;
+  }
+}
